@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "healthchecksapi",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authhealthchecksb54b8670",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+type Subscription {
+  onConditionMonitoringDataRecord(
+    unitNumber: Int!
+  ): ConditionMonitoringDataRecord
+  @aws_subscribe(mutations: ["createConditionMonitoringDataRecord"])
+}
+type Engine
+@model(subscriptions: null)
+@auth(rules: [{ allow: owner, operations: [create, delete, update] }]) {
+   id: ID!
+   unitNumber: Int!
+}
+type ConditionMonitoringDataRecord
+@model(subscriptions: null)
+@searchable
+@aws_cognito_user_pools
+@aws_iam
+@auth(rules: [
+      { allow: owner, operations: [create, delete, update] },
+      { allow: private, provider: iam, operations: [create, read]}
+])
+{
+    id: ID! @primaryKey(sortKeyFields: ["unitNumber"]) @index(name: "listConditionMonitoringDataRecordsByUnitNumber", queryField: "listConditionMonitoringDataRecordsByUnitNumber", sortKeyFields: ["unitNumber"])
+    unitNumber: Int!
+    dateTime: AWSDateTime!
+    data: AWSJSON!
+}
+

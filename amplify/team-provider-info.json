@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-healthchecks-dev-160157-authRole",
+      "UnauthRoleArn": "arn:aws:iam::300813158921:role/amplify-healthchecks-dev-160157-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::300813158921:role/amplify-healthchecks-dev-160157-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-healthchecks-dev-160157-deployment",
+      "UnauthRoleName": "amplify-healthchecks-dev-160157-unauthRole",
+      "StackName": "amplify-healthchecks-dev-160157",
+      "StackId": "arn:aws:cloudformation:us-west-2:300813158921:stack/amplify-healthchecks-dev-160157/b4f40790-aa2b-11ec-8c46-0aff63139f6d",
+      "AmplifyAppId": "d1k1hcectjyhhy"
+    },
+    "categories": {
+      "auth": {
+        "healthchecksb54b8670": {}
+      }
+    }
+  }
+}
