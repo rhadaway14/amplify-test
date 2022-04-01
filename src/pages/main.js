@@ -140,10 +140,10 @@ export default function Main() {
                     <Tables.Labels>Failed</Tables.Labels>
                     <Tables.Labels>Unknown</Tables.Labels>
                     <Tables.Labels>Total Servers</Tables.Labels>
-                    <Tables.Labels>Min Latency</Tables.Labels>
+                    {/* <Tables.Labels>Min Latency</Tables.Labels>
                     <Tables.Labels>Max Latency</Tables.Labels>
                     <Tables.Labels>Mean Latency</Tables.Labels>
-                    <Tables.Labels>Std. Deviation</Tables.Labels>
+                    <Tables.Labels>Std. Deviation</Tables.Labels> */}
                 </Tables.Row>
             </Tables.Head>
             <Tables.Body>
@@ -151,10 +151,10 @@ export default function Main() {
                 <Tables.Data>{countFa}</Tables.Data>
                 <Tables.Data>{countUn}</Tables.Data>
                 <Tables.Data>{totes}</Tables.Data>
-                <Tables.Data>{min}</Tables.Data>
+                {/* <Tables.Data>{min}</Tables.Data>
                 <Tables.Data>{max}</Tables.Data>
                 <Tables.Data>{mean}</Tables.Data>
-                <Tables.Data>{sDev}</Tables.Data>
+                <Tables.Data>{sDev}</Tables.Data> */}
                 </Tables.Row>
             </Tables.Body>
             </Tables.Table>
@@ -174,25 +174,32 @@ export default function Main() {
             <Tables.Table>
                     <Tables.Head>
                         <Tables.Row>
-                            <Tables.Labels>Cluster Name</Tables.Labels>
+                            {/* <Tables.Labels>Cluster Name</Tables.Labels>
                             <Tables.Labels>Host Name</Tables.Labels>
                             <Tables.Labels>Application</Tables.Labels>
                             <Tables.Labels>Status</Tables.Labels>
                             <Tables.Labels>Message</Tables.Labels>
                             <Tables.Labels>Health Check ID</Tables.Labels>
-                            <Tables.Labels>Latency(ms)</Tables.Labels>
+                            <Tables.Labels>Latency(ms)</Tables.Labels> */}
+                            <Tables.Labels>Cluster Name</Tables.Labels>
+                            <Tables.Labels>Host Name</Tables.Labels>
+                            <Tables.Labels>Side</Tables.Labels>
+                            <Tables.Labels>Application</Tables.Labels>
+                            <Tables.Labels>Status</Tables.Labels>
+                            <Tables.Labels>Message</Tables.Labels>
+                            <Tables.Labels>Datetime</Tables.Labels>
                         </Tables.Row>
                     </Tables.Head>
                     <Tables.Body>
                     { healthFail !== undefined ? healthFail.map(items => (
-                        <Tables.Row key={items.hostName + items.applicationName}>
-                            <Tables.Data>{items.clusterName}</Tables.Data>
-                            <Tables.Data>{items.hostName}</Tables.Data>
-                            <Tables.Data>{items.applicationName}</Tables.Data>
-                            <Tables.Data>{items.status}</Tables.Data>
-                            <Tables.Data>{items.message}</Tables.Data>
-                            <Tables.Data>{items.clusterHealthCheckId}</Tables.Data>
-                            <Tables.Data>{items.latency}</Tables.Data>
+                        <Tables.Row key={items.hostName + items.applicationName + items.dateTime}>
+                            <Tables.Data>{items.clusterName}</Tables.Data>X
+                            <Tables.Data>{items.hostName}</Tables.Data>X
+                            <Tables.Data>{items.side}</Tables.Data>X
+                            <Tables.Data>{items.applicationName}</Tables.Data>X
+                            <Tables.Data>{items.status}</Tables.Data>x
+                            <Tables.Data>{items.message}</Tables.Data>    x
+                            <Tables.Data>{items.dateTime}</Tables.Data>X
                         </Tables.Row>)): null}
                     </Tables.Body>
                 </Tables.Table>
