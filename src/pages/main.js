@@ -80,7 +80,7 @@ export default function Main() {
             // console.log(arr[i])
             // console.log(arr[i]["status"])
             
-                if (arr[i]["status"] == "Failed" || arr[i]["status"] == "Unknown") {
+                if (arr[i]["status"] === "Failed" || arr[i]["status"] === "Unknown") {
                     
                     lat.push(parseFloat(arr[i].latency));
                     console.log(lat)
@@ -97,7 +97,7 @@ export default function Main() {
         health.sort((a,b) => {let keyA = a.latency, keyB = b.latency; if (keyA < keyB) return -1; if (keyA > keyB) return 1; return 0 });
         health.reverse();
         for(let i = 0; i < health.length; i++) {
-            if (health[i]["status"] == "Failed") {
+            if (health[i]["status"] === "Failed") {
                 fai.push(health[i]);
             } else {
                 unkown.push(health[i])
@@ -108,10 +108,10 @@ export default function Main() {
         setCountFa(fai.length)
         setCountUn(unkown.length)
         setHealthFail(health)
-        setMin(Math.min(...lat).toFixed(4))
-        setMax(Math.max(...lat).toFixed(4))
-        setMean(mean.toFixed(4))
-        setSDev(getStdDev(lat).toFixed(4))   
+        // setMin(Math.min(...lat).toFixed(4))
+        // setMax(Math.max(...lat).toFixed(4))
+        // setMean(mean.toFixed(4))
+        // setSDev(getStdDev(lat).toFixed(4))   
     }
     
     
@@ -143,7 +143,7 @@ export default function Main() {
                     {/* <Tables.Labels>Min Latency</Tables.Labels>
                     <Tables.Labels>Max Latency</Tables.Labels>
                     <Tables.Labels>Mean Latency</Tables.Labels>
-                    <Tables.Labels>Std. Deviation</Tables.Labels> */}
+                    <Tables.Labels>Std. Deviation</Tables.Labels> */}git 
                 </Tables.Row>
             </Tables.Head>
             <Tables.Body>
