@@ -40,9 +40,9 @@ export default function Main() {
     }
 
     function check(data) {
+        console.log(data)
         let healthData = JSON.parse(data["value"]["data"]["onConditionMonitoringDataRecord"]["data"])
         let newData = healthData["healthCheckStatus"]
-
         let idIndex = isInArray(newData["id"])
 
         if (idIndex === false) {
@@ -50,10 +50,10 @@ export default function Main() {
             
         } else {
             health[idIndex] = newData
-            console.log("brake")
+            // console.log("brake")
             health = [...health]
         }
-        console.log(health)
+        // console.log(health)
         setHealthFail(health)
     }
 
